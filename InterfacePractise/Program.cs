@@ -22,18 +22,18 @@ namespace InterfacePractise
         //Interface
         interface Sum //Interfaces do not have method bodies like abstract classes, But in C# 8 and higher versions, you can add method body in your interface.
         {
-            int Sum();
+            int Sum(); //Methods in interface do not have bodies, so you have to implement it on your inherited class (It is about C# 7 and lower versions)
         }
 
         //Interface
         interface IRunnable //Interfaces do not have method bodies like abstract classes, But in C# 8 and higher versions, you can add method body in your interface.
         {
-            void Run(); //
+            void Run(); //Methods in interface do not have bodies, so you have to implement it on your inherited class (It is about C# 7 and lower versions)
         }
 
         class Human : IRunnable 
         {
-            public void Run()
+            public void Run() //You cannot give private or protected access modifier to interface methods in your class, they have to be public
             {
                 Console.WriteLine("Run as Human");
             }
