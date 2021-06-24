@@ -10,6 +10,15 @@ namespace InterfacePractise
     {
         static void Main(string[] args)
         {
+            //Getting instance and creating object from Human class
+            Human h1 = new Human();
+            h1.Run();
+            h1.Eat();
+
+            //Getting instance and creating object from Animal class
+            Animal a1 = new Animal();
+            a1.Run();
+            a1.Eat();
 
         }
 
@@ -31,22 +40,28 @@ namespace InterfacePractise
             void Run(); //Methods in interface do not have bodies, so you have to implement it on your inherited class (It is about C# 7.3 and lower versions)
         }
 
-        class Human : IRunnable 
+        class Human : IRunnable //Interfaces do not have fields, but they have properties. Remember properties are also methods, so you can use them in interfaces
         {
             public void Run() //You cannot give private or protected access modifier to interface methods in your class, they have to be public
             {
                 Console.WriteLine("Run as Human");
             }
+
+            public void Eat()
+            {
+                Console.WriteLine("Eat as a Human"); //You cannot give private or protected access modifier to interface methods in your class, they have to be public
+            }
+
         }
 
         class Animal : IRunnable, IEatable //The main difference between abstract class and interface is, you can get inheritance from several classes 
         {
-            public void Run()
+            public void Run() //You cannot give private or protected access modifier to interface methods in your class, they have to be public
             {
                 Console.WriteLine("Run as Animal");
             }
 
-            public void Eat()
+            public void Eat() //You cannot give private or protected access modifier to interface methods in your class, they have to be public
             {
                 Console.WriteLine("Eat as Animal");
             }
