@@ -26,12 +26,12 @@ namespace InterfacePractise
         }
 
         //Interface
-        interface IRunnable
+        interface IRunnable //Interfaces do not have method bodies like abstract classes, But in C# 8 and higher versions, you can add method body in your interface.
         {
             void Run(); //
         }
 
-        class Human : IRunnable
+        class Human : IRunnable 
         {
             public void Run()
             {
@@ -39,11 +39,16 @@ namespace InterfacePractise
             }
         }
 
-        class Animal : IRunnable, 
+        class Animal : IRunnable, IEatable //The main difference between abstract class and interface is, you can get inheritance from several classes 
         {
             public void Run()
             {
                 Console.WriteLine("Run as Animal");
+            }
+
+            public void Eat()
+            {
+                Console.WriteLine("Eat as Animal");
             }
         }
 
